@@ -1,0 +1,266 @@
+/* ─── Color Variables ─────────────────────────── */
+:root {
+  --blue-dark:   #0487D9;
+  --blue-mid:    #0CB1F2;
+  --blue-light:  #0FC9F2;
+  --blue-pale:   #99E2F2;
+  --off-white:   #F2F2F2;
+}
+
+/* ─── Google Font ─────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+/* ─── Reset & Base ────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Cairo', Arial, sans-serif;
+  direction: rtl;
+
+  background: linear-gradient(135deg, #0487D9 0%, #023e73 100%);
+}
+
+/* ─── Navigation ──────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 12px rgba(4, 135, 217, 0.35);
+}
+
+nav ul {
+  background: var(--blue-mid);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li a {
+  display: block;
+  padding: 16px 24px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav li a:hover {
+  background: var(--blue-dark);
+  color: var(--blue-pale);
+}
+
+/* ─── Page Wrapper ────────────────────────────── */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+}
+
+
+
+/* ─── Form Card ───────────────────────────────── */
+.form-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(4, 135, 217, 0.4);
+  overflow: hidden;
+}
+
+/* ─── Form Header ─────────────────────────────── */
+.form-header {
+  background: var(--blue-dark);
+  padding: 24px 30px;
+  text-align: center;
+}
+
+.form-header h2 {
+  color: var(--blue-pale);
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin: 0 0 6px;
+}
+
+.form-header p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ─── Form Body ───────────────────────────────── */
+form {
+  padding: 28px 30px 30px;
+}
+
+/* ─── Field Group ─────────────────────────────── */
+.field-group {
+  margin-bottom: 18px;
+}
+
+.field-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blue-dark);
+  margin-bottom: 6px;
+}
+
+.field-group input[type="text"],
+.field-group input[type="email"],
+.field-group input[type="number"],
+.field-group input[type="tel"] {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: 'Cairo', Arial, sans-serif;
+  font-size: 14px;
+  border: 2px solid #cde8f7;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #f4fbff;
+  direction: rtl;
+}
+
+.field-group input:focus {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 3px rgba(12, 177, 242, 0.18);
+  background: #fff;
+}
+
+/* ─── Two-column layout ───────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ─── Radio Group ─────────────────────────────── */
+.radio-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.radio-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eaf7fd;
+  border: 2px solid #cde8f7;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.radio-option:has(input:checked) {
+  border-color: var(--blue-mid);
+  background: #d4f1fb;
+  color: var(--blue-dark);
+}
+
+.radio-option input[type="radio"] {
+  accent-color: var(--blue-dark);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ─── Submit Button ───────────────────────────── */
+.submit-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 14px;
+  font-family: 'Cairo', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  background: var(--blue-dark);
+  color: var(--blue-pale);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(4, 135, 217, 0.4);
+}
+
+.submit-btn:hover {
+  background: var(--blue-mid);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(12, 177, 242, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media (max-width: 480px) {
+  form { padding: 20px 18px 24px; }
+  .two-col { grid-template-columns: 1fr; }
+  .radio-group { flex-direction: column; }
+}
+
+
+
+
+
+.whoweare {
+  margin-left: 10%;
+  margin-right: 10%;
+   font-weight: bold;
+}
+
+
+
+
+.ticker-wrap {
+  background: var(--blue-dark);
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+}
+
+.ticker {
+  display: inline-block;
+  animation: ticker-scroll 30s linear infinite;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
+}
+
+
+
+
+.logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.85);
+  box-shadow: 0 4px 24px rgba(4, 135, 217, 0.5);
+}
+
+
+
+
